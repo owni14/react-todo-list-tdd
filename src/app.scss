@@ -1,3 +1,77 @@
 #appContainer {
-    height: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+
+    .todo-list-wrapper {
+        background-color: #182a39;
+        width: 65rem;
+        border-radius: 20px;
+        overflow: hidden;
+        color: "#fff";
+
+        .todo-list-top {
+            height: 6rem;
+            padding: 1.5rem;
+            border-bottom: 1px solid transparent;
+            box-shadow: 0 3px 5px 0;
+            margin-bottom: 3rem;
+
+            .top-wrapper {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                p {
+                    color: #fff;
+                }
+            }
+        }
+
+        .todo-list-section-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+
+            .input-wrapper {
+                margin-bottom: 3.5rem;
+                input {
+                    width: 17rem;
+                    height: 2.5rem;
+                    border: 1px solid transparent;
+                    border-radius: 5px;
+                    margin-right: 1rem;
+                }
+
+                button {
+                    height: 2.5rem;
+                    width: 3rem;
+                    border: 1px solid transparent;
+                    border-radius: 5px;
+                }
+            }
+
+            .list-wrapper {
+                width: 40rem;
+                border: 1px solid #59f9ff;
+                border-radius: 5px;
+                margin-bottom: 3rem;
+                .detail-list-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.5rem;
+                    p {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
 }
