@@ -2,15 +2,15 @@
 
 ### Enviroment
 
-- [nodejs] - v.18.18.2
-- [reactjs] - v.18.2.64
-- [typescript] - v.4.9.5
-- [jest] - v27.5.1
-- [sass] - v7.0.3
+-   [nodejs] - v.18.18.2
+-   [reactjs] - v.18.2.64
+-   [typescript] - v.4.9.5
+-   [jest] - v27.5.1
+-   [sass] - v7.0.3
 
 ### Dependencies
 
-#### package.json
+`package.json`
 
 ---
 
