@@ -6,6 +6,7 @@
 - [reactjs] - v.18.2.64
 - [typescript] - v.4.9.5
 - [jest] - v27.5.1
+- [sass] - v7.0.3
 
 ### Dependencies
 
@@ -41,3 +42,4 @@
 [nodejs]: https://nodejs.org/en/
 [typescript]: https://www.typescriptlang.org/
 [jest]: https://jestjs.io/
+[sass]: https://sass-lang.com/
