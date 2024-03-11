@@ -9,7 +9,7 @@
     -o-transform: translate(-50%, -50%);
 
     .todo-list-wrapper {
-        background-color: #182a39;
+        background-color: #15334d;
         width: 65rem;
         border-radius: 20px;
         overflow: hidden;
@@ -23,12 +23,47 @@
             margin-bottom: 3rem;
 
             .top-wrapper {
+                height: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
 
-                p {
-                    color: #fff;
+                div {
+                    width: 20%;
+                }
+
+                .date-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 0.5rem;
+
+                    p {
+                        &:first-child {
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                        }
+                        &:last-child {
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                .title {
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                }
+
+                .svg-wrapper {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    svg {
+                        width: 40px;
+                        height: 40px;
+                        color: #59f9ff;
+                    }
                 }
             }
         }
@@ -41,12 +76,16 @@
 
             .input-wrapper {
                 margin-bottom: 3.5rem;
-                input {
-                    width: 17rem;
+                input[type="text"] {
+                    width: 25rem;
                     height: 2.5rem;
                     border: 1px solid transparent;
                     border-radius: 5px;
                     margin-right: 1rem;
+                    background-color: #59f9ff;
+                    outline: none;
+                    font-size: 1.2rem;
+                    padding: 0.5rem;
                 }
 
                 button {
@@ -54,21 +93,53 @@
                     width: 3rem;
                     border: 1px solid transparent;
                     border-radius: 5px;
+                    background-color: #59f9ff;
+                    font-size: 1.2rem;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
 
             .list-wrapper {
                 width: 40rem;
-                border: 1px solid #59f9ff;
-                border-radius: 5px;
+                border: 3px solid #59f9ff;
+                border-radius: 10px;
                 margin-bottom: 3rem;
                 .detail-list-wrapper {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0.5rem;
+                    margin: 1.4rem;
+                    .detail-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0.5rem 1.2rem;
+
+                        &.has-line {
+                            border-bottom: 1px solid #59f9ff;
+                            border-bottom-width: 3px;
+                            padding-bottom: 1rem;
+                            padding-top: 0.5rem;
+                        }
+                    }
+                    .icon-wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-content: center;
+                        gap: 0.7rem;
+
+                        svg {
+                            width: 30px;
+                            height: 30px;
+                            color: #59f9ff;
+                            &:hover {
+                                cursor: pointer;
+                                color: #fff;
+                            }
+                        }
+                    }
                     p {
                         color: #fff;
+                        font-size: 1.7rem;
                     }
                 }
             }
