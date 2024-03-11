@@ -86,6 +86,13 @@
                     outline: none;
                     font-size: 1.2rem;
                     padding: 0.5rem;
+                    transition-duration: 0.3s;
+
+                    &:focus,
+                    &:hover {
+                        background-color: #fff;
+                        transition-duration: 0.3s;
+                    }
                 }
 
                 button {
@@ -95,8 +102,12 @@
                     border-radius: 5px;
                     background-color: #59f9ff;
                     font-size: 1.2rem;
+                    transition-duration: 0.3s;
+
                     &:hover {
                         cursor: pointer;
+                        background-color: #fff;
+                        transition-duration: 0.3s;
                     }
                 }
             }
@@ -131,9 +142,11 @@
                             width: 30px;
                             height: 30px;
                             color: #59f9ff;
+                            transition-duration: 0.3s;
                             &:hover {
                                 cursor: pointer;
                                 color: #fff;
+                                transition-duration: 0.3s;
                             }
                         }
                     }
