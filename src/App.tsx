@@ -1,9 +1,8 @@
 import "./app.scss";
 import { BiBookmarks } from "react-icons/bi";
-import { BiSolidTrash } from "react-icons/bi";
-import { BiEdit } from "react-icons/bi";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import TodoList from "./todoList";
 
 function App() {
     dayjs.extend(advancedFormat);
@@ -29,37 +28,7 @@ function App() {
                         <input type="text" />
                         <button>Add</button>
                     </div>
-                    <main className="list-wrapper">
-                        <div className="detail-list-wrapper">
-                            <div
-                                className={`${"detail-content"} ${"has-line"}`}>
-                                <p>TASK 1</p>
-                                <div className="icon-wrapper">
-                                    <BiSolidTrash />
-                                    <BiEdit />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="detail-list-wrapper">
-                            <div
-                                className={`${"detail-content"} ${"has-line"}`}>
-                                <p>TASK 2</p>
-                                <div className="icon-wrapper">
-                                    <BiSolidTrash />
-                                    <BiEdit />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="detail-list-wrapper">
-                            <div className="detail-content">
-                                <p>TASK 3</p>
-                                <div className="icon-wrapper">
-                                    <BiSolidTrash />
-                                    <BiEdit />
-                                </div>
-                            </div>
-                        </div>
-                    </main>
+                    <TodoList />
                 </section>
             </div>
         </div>
