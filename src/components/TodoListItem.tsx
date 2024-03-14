@@ -1,6 +1,7 @@
 import { BiEdit, BiSolidTrash } from "react-icons/bi";
+import { ITodoListItems } from "../type";
 
-const TodoList = () => {
+const TodoListItems = ({}: ITodoListItems) => {
     return (
         <main className="list-wrapper">
             <div className="detail-list-wrapper">
@@ -34,4 +35,4 @@ const TodoList = () => {
     );
 };
 
-export default TodoList;
+export default TodoListItems;
