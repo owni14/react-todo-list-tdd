@@ -3,7 +3,7 @@ import { ITodoList, ITodoListItems } from "../type";
 import cx from "classnames";
 
 const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
-    const onClickButton = (delNo: number) => {
+    const onClickDelete = (delNo: number) => {
         setTodoList(prev =>
             prev.reduce((acc: ITodoList[], cur: ITodoList) => {
                 const { no, todo } = cur;
@@ -30,9 +30,13 @@ const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
                     <div
                         className={cx("detail-content", {
                             line: list.no !== 1,
+                            "fade-in": list.no,
                         })}>
-                        <p>{list.todo}</p>
-                        <div className="icon-wrapper" onClick={() => onClickButton(list.no)}>
+                        <div className="no-text">
+                            <p>{`${list.no}.`}</p>
+                            <p>{list.todo}</p>
+                        </div>
+                        <div className="icon-wrapper" onClick={() => onClickDelete(list.no)}>
                             <BiSolidTrash />
                         </div>
                     </div>

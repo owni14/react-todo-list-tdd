@@ -119,7 +119,7 @@
                 border: 3px solid #59f9ff;
                 border-radius: 10px;
                 margin-bottom: 3rem;
-                max-height: 50vh;
+                max-height: 30rem;
 
                 &.scroll {
                     overflow-y: scroll;
@@ -144,11 +144,39 @@
                         align-items: center;
                         padding: 0.5rem 1.2rem;
 
+                        @keyframes fadeIn {
+                            from {
+                                opacity: 0.3;
+                                transform: translateY(-0.5rem);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+
+                        &.fade-in {
+                            animation: fadeIn 0.5s ease forwards;
+                        }
+
                         &.line {
                             border-top: 1px solid #59f9ff;
                             border-top-width: 3px;
                             padding-top: 1.6rem;
                             padding-bottom: 0.5rem;
+                        }
+
+                        .no-text {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 0.5rem;
+                            width: 100%;
+                            p {
+                                &:first-child {
+                                    font-weight: 600;
+                                }
+                            }
                         }
                     }
                     .icon-wrapper {
@@ -172,6 +200,7 @@
                     p {
                         color: #fff;
                         font-size: 1.7rem;
+                        word-break: break-all;
                     }
                 }
             }
