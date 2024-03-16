@@ -31,11 +31,13 @@
         "react-scripts": "5.0.1",
         "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"
-    }
+    },
 
   "devDependencies": {
-    "jest": "^27.5.1"
-  }
+        "@babel/preset-env": "^7.24.0",
+        "@babel/preset-typescript": "^7.23.3",
+        "jest": "^27.5.1"
+    }
 ```
 
 <!-- Outlink -->
