@@ -3,7 +3,7 @@ import TodoListForm from "./components/TodoListForm";
 import "./app.scss";
 import { useState } from "react";
 import { ITodoList } from "./type";
-import TodoListItems from "./components/TodoListItem";
+import TodoListItems from "./components/TodoListItems";
 
 function App() {
     const [todoList, setTodoList] = useState<ITodoList[]>([]);

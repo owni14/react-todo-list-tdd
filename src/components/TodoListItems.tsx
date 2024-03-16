@@ -32,11 +32,11 @@ const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
                             line: list.no !== 1,
                             "fade-in": list.no,
                         })}>
-                        <div className="no-text">
-                            <p>{`${list.no}.`}</p>
-                            <p>{list.todo}</p>
+                        <div className="text-area">
+                            <p data-testid="no">{`${list.no}.`}</p>
+                            <p data-testid="text">{list.todo}</p>
                         </div>
-                        <div className="icon-wrapper" onClick={() => onClickDelete(list.no)}>
+                        <div className="icon-wrapper" data-testid="delete" onClick={() => onClickDelete(list.no)}>
                             <BiSolidTrash />
                         </div>
                     </div>

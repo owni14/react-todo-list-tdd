@@ -8,40 +8,40 @@ import TodoListForm from "../components/TodoListForm";
 
 describe("<TodoListHeader />", () => {
     const mockTodoList: ITodoList[] = [{ no: 1, todo: "first todo" }];
+    const setMockTodoList: React.Dispatch<React.SetStateAction<ITodoList[]>> = jest.fn();
+    const newTodo = "new todo";
+    const addedMockTodoList = [...mockTodoList, { no: mockTodoList.length + 1, todo: newTodo }];
 
     test("check header text", () => {
         render(<TodoListHeader todoList={mockTodoList} />);
         dayjs.extend(advancedFormat);
-        const today = dayjs().format("MMMM, Do");
 
         const title = screen.getByText("To Do List");
-        const date = screen.getByText(today);
+        const date = screen.getByText(dayjs().format("MMMM, Do"));
 
         expect(title).toBeInTheDocument();
         expect(date).toBeInTheDocument();
     });
 
-    test("when button is clicked, todoList length increase 1", () => {
-        const setMockTodoList: React.Dispatch<React.SetStateAction<ITodoList[]>> = jest.fn();
-        render(
-            <div>
-                <TodoListHeader todoList={mockTodoList} />
-                <TodoListForm setTodoList={setMockTodoList} />
-            </div>,
-        );
-
+    test("click add button", () => {
+        render(<TodoListForm setTodoList={setMockTodoList} />);
         const button: HTMLButtonElement = screen.getByRole("button");
         const inputValue: HTMLInputElement = screen.getByRole("textbox");
-        const newTodo = "new todo";
 
         fireEvent.change(inputValue, { target: { value: newTodo } });
         expect(inputValue).toHaveValue();
 
         fireEvent.click(button);
-        setMockTodoList([...mockTodoList, { no: mockTodoList.length + 1, todo: newTodo }]);
-        expect(setMockTodoList).toHaveBeenCalledWith([...mockTodoList, { no: mockTodoList.length + 1, todo: newTodo }]);
+        expect(inputValue).not.toHaveValue();
 
+        setMockTodoList(addedMockTodoList);
+        expect(setMockTodoList).toHaveBeenCalledWith(addedMockTodoList);
+    });
+
+    test("increase todo list length", () => {
+        render(<TodoListHeader todoList={addedMockTodoList} />);
         const activeTask = screen.getByTestId("active-tasks");
-        expect(activeTask.textContent).toContain(`${mockTodoList.length} Active Tasks`);
+
+        expect(activeTask.textContent).toContain(`${addedMockTodoList.length} Active Tasks`);
     });
 });

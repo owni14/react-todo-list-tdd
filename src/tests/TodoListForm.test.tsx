@@ -6,6 +6,8 @@ import { ITodoList } from "../type";
 describe("<TodoListForm />", () => {
     const mockTodoList: ITodoList[] = [{ no: 1, todo: "first todo" }];
     const setMockTodoList: React.Dispatch<React.SetStateAction<ITodoList[]>> = jest.fn();
+    const newTodo: string = "new todo";
+    const addedMockTodoList = [...mockTodoList, { no: mockTodoList.length + 1, todo: newTodo }];
 
     beforeEach(() => {
         render(<TodoListForm setTodoList={setMockTodoList} />);
@@ -23,24 +25,22 @@ describe("<TodoListForm />", () => {
         const button: HTMLButtonElement = screen.getByRole("button");
         const inputValue: HTMLInputElement = screen.getByRole("textbox");
 
-        fireEvent.change(inputValue, { target: { value: "todo something" } });
+        fireEvent.change(inputValue, { target: { value: newTodo } });
 
         expect(inputValue).toHaveValue();
         expect(button).not.toHaveAttribute("disabled");
     });
 
-    test("when you press the button, the list is added", () => {
+    test("when you press the button, the list will be added", () => {
         const button: HTMLButtonElement = screen.getByRole("button");
-        const inputField: HTMLInputElement = screen.getByRole("textbox");
-        const inputValue: string = "new todo";
+        const inputValue: HTMLInputElement = screen.getByRole("textbox");
 
-        fireEvent.change(inputField, { target: { value: inputValue } });
+        fireEvent.change(inputValue, { target: { value: newTodo } });
+        expect(inputValue).toHaveValue();
+
         fireEvent.click(button);
-
-        setMockTodoList([...mockTodoList, { no: mockTodoList.length + 1, todo: inputValue }]);
-        expect(setMockTodoList).toHaveBeenCalledWith([
-            ...mockTodoList,
-            { no: mockTodoList.length + 1, todo: inputValue },
-        ]);
+        expect(inputValue).not.toHaveValue();
+        setMockTodoList(addedMockTodoList);
+        expect(setMockTodoList).toHaveBeenCalledWith(addedMockTodoList);
     });
 });
