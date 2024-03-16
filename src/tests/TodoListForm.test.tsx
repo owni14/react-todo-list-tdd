@@ -21,7 +21,7 @@ describe("<TodoListForm />", () => {
 
     test("if anything is entered input value, button becomes activated.", () => {
         const button: HTMLButtonElement = screen.getByRole("button");
-        const inputValue: HTMLInputElement = screen.getByPlaceholderText("Please enter your todo list");
+        const inputValue: HTMLInputElement = screen.getByRole("textbox");
 
         fireEvent.change(inputValue, { target: { value: "todo something" } });
 
@@ -31,7 +31,7 @@ describe("<TodoListForm />", () => {
 
     test("when you press the button, the list is added", () => {
         const button: HTMLButtonElement = screen.getByRole("button");
-        const inputField: HTMLInputElement = screen.getByPlaceholderText("Please enter your todo list");
+        const inputField: HTMLInputElement = screen.getByRole("textbox");
         const inputValue: string = "new todo";
 
         fireEvent.change(inputField, { target: { value: inputValue } });

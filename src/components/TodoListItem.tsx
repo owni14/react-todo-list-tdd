@@ -32,9 +32,7 @@ const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
                             line: list.no !== 1,
                         })}>
                         <p>{list.todo}</p>
-                        <div
-                            className="icon-wrapper"
-                            onClick={() => onClickButton(list.no)}>
+                        <div className="icon-wrapper" onClick={() => onClickButton(list.no)}>
                             <BiSolidTrash />
                         </div>
                     </div>

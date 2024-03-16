@@ -14,10 +14,7 @@ function App() {
                 <TodoListHeader todoList={todoList} />
                 <section className="todo-list-section-wrapper">
                     <TodoListForm setTodoList={setTodoList} />
-                    <TodoListItems
-                        todoList={todoList}
-                        setTodoList={setTodoList}
-                    />
+                    <TodoListItems todoList={todoList} setTodoList={setTodoList} />
                 </section>
             </div>
         </div>
