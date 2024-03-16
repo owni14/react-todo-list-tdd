@@ -93,6 +93,9 @@
                         background-color: #fff;
                         transition-duration: 0.4s;
                     }
+                    &::placeholder {
+                        color: gray;
+                    }
                 }
 
                 button {
@@ -109,6 +112,9 @@
                         background-color: #fff;
                         transition-duration: 0.4s;
                     }
+                    &:disabled {
+                        background-color: #a9a9a9;
+                    }
                 }
             }
 
@@ -117,6 +123,23 @@
                 border: 3px solid #59f9ff;
                 border-radius: 10px;
                 margin-bottom: 3rem;
+                max-height: 50vh;
+
+                &.scroll {
+                    overflow-y: scroll;
+                }
+                &::-webkit-scrollbar {
+                    width: 0.4rem;
+                }
+                &::-webkit-scrollbar-thumb {
+                    height: auto;
+                    background-color: #59f9ff;
+                    border-radius: 20px;
+                }
+
+                &.hide {
+                    display: none;
+                }
                 .detail-list-wrapper {
                     margin: 1.4rem;
                     .detail-content {
@@ -125,11 +148,11 @@
                         align-items: center;
                         padding: 0.5rem 1.2rem;
 
-                        &.has-line {
-                            border-bottom: 1px solid #59f9ff;
-                            border-bottom-width: 3px;
-                            padding-bottom: 1rem;
-                            padding-top: 0.5rem;
+                        &.line {
+                            border-top: 1px solid #59f9ff;
+                            border-top-width: 3px;
+                            padding-top: 1.6rem;
+                            padding-bottom: 0.5rem;
                         }
                     }
                     .icon-wrapper {

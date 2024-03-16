@@ -6,11 +6,15 @@ import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 
 describe("<TodoListHeader />", () => {
-    let todoList: ITodoList[] = [];
-    render(<TodoListHeader todoList={todoList} />);
+    const todoList: ITodoList[] = [];
 
-    /** Text test */
-    test("Check text", () => {
+    beforeEach(() => {
+        dayjs.extend(advancedFormat);
+        const today = dayjs().format("MMMM, Do");
+        render(<TodoListHeader todoList={todoList} />);
+    });
+
+    test("check header text", () => {
         dayjs.extend(advancedFormat);
         const today = dayjs().format("MMMM, Do");
 
