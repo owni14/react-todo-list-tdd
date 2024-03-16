@@ -14,7 +14,7 @@ const TodoListHeader = ({ todoList }: ITodoListHeader) => {
                     <p>{today}</p>
                     <p>3 Active Tasks</p>
                 </div>
-                <p className="title">To do List</p>
+                <p className="title">To Do List</p>
                 <div className="svg-wrapper">
                     <BiBookmarks />
                 </div>
