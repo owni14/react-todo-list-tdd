@@ -15,12 +15,13 @@ describe("<TodoListHeader />", () => {
     test("check header text", () => {
         render(<TodoListHeader todoList={mockTodoList} />);
         dayjs.extend(advancedFormat);
+        const today = dayjs().format("MMMM, Do");
 
         const title = screen.getByText("To Do List");
-        const date = screen.getByText(dayjs().format("MMMM, Do"));
+        const date = screen.getByTestId("today");
 
         expect(title).toBeInTheDocument();
-        expect(date).toBeInTheDocument();
+        expect(date.textContent).toEqual(today);
     });
 
     test("click add button", () => {

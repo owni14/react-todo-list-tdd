@@ -23,7 +23,6 @@ const TodoListForm = ({ setTodoList }: ITodoListForm) => {
                 placeholder={"Please enter your todo list"}
                 onChange={onChangeInput}
             />
-
             <button onClick={onClickButton} disabled={!inputValue}>
                 Add
             </button>

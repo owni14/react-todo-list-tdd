@@ -11,7 +11,7 @@ const TodoListHeader = ({ todoList }: ITodoListHeader) => {
         <div className="todo-list-top">
             <div className="top-wrapper">
                 <div className="date-wrapper">
-                    <p>{today}</p>
+                    <p data-testid="today">{today}</p>
                     <p data-testid="active-tasks">{todoList.length} Active Tasks</p>
                 </div>
                 <p className="title">To Do List</p>
