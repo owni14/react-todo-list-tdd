@@ -8,6 +8,36 @@
 -   [jest] - v27.5.1
 -   [sass] - v7.0.3
 
+### Folder structure
+
+```
+├─ node_modules
+├─ public
+├─ src
+│  ├─ App.tsx
+│  ├─ app.scss
+│  ├─ components
+│  │  ├─ TodoListForm.tsx
+│  │  ├─ TodoListHeader.tsx
+│  │  └─ TodoListItems.tsx
+│  ├─ index.tsx
+│  ├─ styles
+│  │  ├─ global.scss
+│  │  └─ reset.scss
+│  ├─ tests
+│  │  ├─ TodoListForm.test.tsx
+│  │  ├─ TodoListHeader.test.tsx
+│  │  └─ TodoListItem.test.tsx
+│  └─ type.ts
+├─ .gitignroe
+├─ .prettierrc
+├─ .babel.config.js
+├─ .package-lock.json
+├─ .package.json
+├─ .README.md
+├─ .tsconfig.json
+```
+
 ### Dependencies
 
 `package.json`
