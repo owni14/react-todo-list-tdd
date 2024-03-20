@@ -1,6 +1,9 @@
-# React todo list with TDD
-### Prject link
-- [https://owni14-todo-list-tdd.netlify.app/](https://owni14-todo-list-tdd.netlify.app/)
+# React todo list with TDD 
+### Project link
+- [owni14-todo-list](https://owni14-todo-list-tdd.netlify.app/)
+
+### Deploy
+- Netlify
 
 ### Enviroment
 
