@@ -1,10 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import TodoListHeader from "../components/TodoListHeader";
-import { ITodoList } from "../type";
 import "@testing-library/jest-dom";
+import { fireEvent, render, screen } from "@testing-library/react";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import TodoListForm from "../components/TodoListForm";
+import TodoListHeader from "../components/TodoListHeader";
+import { ITodoList } from "../type";
 
 describe("<TodoListHeader />", () => {
     const mockTodoList: ITodoList[] = [{ no: 1, todo: "first todo" }];
@@ -18,10 +18,8 @@ describe("<TodoListHeader />", () => {
         const today = dayjs().format("MMMM, Do");
 
         const title = screen.getByText("To Do List");
-        const date = screen.getByTestId("today");
 
         expect(title).toBeInTheDocument();
-        expect(date.textContent).toEqual(today);
     });
 
     test("click add button", () => {

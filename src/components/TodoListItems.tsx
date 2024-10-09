@@ -1,6 +1,6 @@
+import cx from "classnames";
 import { BiSolidTrash } from "react-icons/bi";
 import { ITodoList, ITodoListItems } from "../type";
-import cx from "classnames";
 
 const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
     const onClickDelete = (delNo: number) => {
@@ -10,9 +10,8 @@ const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
                 if (no !== delNo) {
                     if (no > delNo) {
                         return [...acc, { no: no - 1, todo }];
-                    } else {
-                        return [...acc, { no, todo }];
                     }
+                    return [...acc, { no, todo }];
                 }
                 return acc;
             }, []),
@@ -26,19 +25,13 @@ const TodoListItems = ({ todoList, setTodoList }: ITodoListItems) => {
                 scroll: todoList.length > 5,
             })}>
             {todoList.map(list => (
-                <div className="detail-list-wrapper" key={list.no}>
-                    <div
-                        className={cx("detail-content", {
-                            line: list.no !== 1,
-                            "fade-in": list.no,
-                        })}>
-                        <div className="text-area">
-                            <p data-testid="no">{`${list.no}.`}</p>
-                            <p data-testid="text">{list.todo}</p>
-                        </div>
-                        <div className="icon-wrapper" data-testid="delete" onClick={() => onClickDelete(list.no)}>
-                            <BiSolidTrash />
-                        </div>
+                <div className="detail-content" key={list.no}>
+                    <div className="text-area">
+                        <p data-testid="no">{`${list.no}.`}</p>
+                        <p data-testid="text">{list.todo}</p>
+                    </div>
+                    <div className="icon-wrapper" data-testid="delete" onClick={() => onClickDelete(list.no)}>
+                        <BiSolidTrash />
                     </div>
                 </div>
             ))}

@@ -1,23 +1,13 @@
-import dayjs from "dayjs";
-import advancedFormat from "dayjs/plugin/advancedFormat";
-import { BiBookmarks } from "react-icons/bi";
 import { ITodoListHeader } from "../type";
 
 const TodoListHeader = ({ todoList }: ITodoListHeader) => {
-    dayjs.extend(advancedFormat);
-    const today = dayjs().format("MMMM, Do");
-
     return (
         <div className="todo-list-top">
             <div className="top-wrapper">
-                <div className="date-wrapper">
-                    <p data-testid="today">{today}</p>
-                    <p data-testid="active-tasks">{todoList.length} Active Tasks</p>
-                </div>
                 <p className="title">To Do List</p>
-                <div className="svg-wrapper">
-                    <BiBookmarks />
-                </div>
+                <p className="active-tasks" data-testid="active-tasks">
+                    {todoList.length} Active Tasks
+                </p>
             </div>
         </div>
     );
